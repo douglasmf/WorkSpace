@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as S from './Contatos.style';
 import ContatosForm from './components/ContatosForm';
 import { FaRegEdit } from "react-icons/fa";
@@ -7,22 +7,18 @@ import { lightTheme } from '../../themes/Themes';
 import { ContatosContext } from '../../context/ContatosContext';
 
 const Contatos = () => {
-  const [scrollContato, setScrollContato] = useState(false);
-  const { listContatos, handleEditContato, handleDeleteContato, openCadastro } = useContext(ContatosContext);
+  const { listContatos, openCadastro, handleEditContato, handleDeleteContato, open } = useContext(ContatosContext);
+  const [scrolling, setScrolling] = useState(listContatos.length > 10);
 
   useEffect(() => {
-    if (listContatos.length > 10) {
-      setScrollContato(true);
-    } else {
-      setScrollContato(false);
-    }
-  }, [listContatos]);
+    setScrolling(listContatos.length > 10);
+  }, [listContatos.length]);
 
   return (
     <S.ContatosContainer>
       <S.Title>Lista de Contatos</S.Title>
       {listContatos.length > 0 ? (
-        <S.TabelaContainer scrolling={scrollContato}>
+        <S.TabelaContainer scrolling={scrolling}>
           <S.Tabela>
             <thead>
               <tr>
@@ -46,12 +42,14 @@ const Contatos = () => {
                   <td className='acoes'>
                     <button
                       className='edit'
-                      onClick={() => handleEditContato(list)}>
+                      onClick={() => handleEditContato(list)}
+                    >
                       <FaRegEdit />
                     </button>
                     <button
                       className='delete'
-                      onClick={() => handleDeleteContato(list.id)}>
+                      onClick={() => handleDeleteContato(list.id)}
+                    >
                       <MdDelete />
                     </button>
                   </td>
@@ -65,9 +63,9 @@ const Contatos = () => {
       )}
 
       <S.ButtonAdd onClick={openCadastro}>Novo Contato</S.ButtonAdd>
-      <ContatosForm />
+      {open && <ContatosForm />}
     </S.ContatosContainer>
   );
-};
+}
 
 export default Contatos;

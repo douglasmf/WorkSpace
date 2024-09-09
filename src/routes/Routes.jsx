@@ -3,7 +3,7 @@ import Header from "../template/header/Header"
 import Home from "../pages/home/Home"
 import Tarefas from "../pages/tarefas/Tarefas"
 import Calendario from "../pages/calendario/Calendario"
-import Contatos2 from "../pages/contatos/Contatos2"
+import Contatos from "../pages/contatos/Contatos"
 
 
 export const AppRoutes = () => {
@@ -15,7 +15,7 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home/>}/>
             <Route path="/tarefas" element={<Tarefas/>}/>
             <Route path="/calendario" element={<Calendario/>}/>
-            <Route path="/contatos" element={<Contatos2/>}/>   
+            <Route path="/contatos" element={<Contatos/>}/>   
           </Routes>
         </main>
     </BrowserRouter>

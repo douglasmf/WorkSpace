@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { lightTheme } from '../../themes/Themes'
+import { lightTheme } from '../../themes/Themes';
 
 export const ContatosContainer = styled.div`
   max-width: 1100px;
@@ -32,7 +32,6 @@ export const Title = styled.h1`
     margin-bottom: 2.5rem;
   } 
 `;
-
 
 export const TabelaContainer = styled.div`
   width: 100%;
@@ -88,8 +87,6 @@ export const Tabela = styled.table`
       color: ${lightTheme.colors.deleteColor};
     }
   }
-  
-  
 `;
 
 export const ButtonAdd = styled.button`

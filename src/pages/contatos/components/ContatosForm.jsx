@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import * as FS from './ContatosForm.style';
-import * as S from '../Contatos.style';
 import { ContatosContext } from '../../../context/ContatosContext';
 
 const ContatosForm = () => {
-  const { addContato, openCadastro, open, contatoToEdit, handleUpdateContato } = useContext(ContatosContext);
+  const { addContato, handleUpdateContato, contatoToEdit, openCadastro } = useContext(ContatosContext);
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -13,59 +12,61 @@ const ContatosForm = () => {
 
   useEffect(() => {
     if (contatoToEdit) {
-      setNome(contatoToEdit.nome || '');
-      setEmail(contatoToEdit.email || '');
-      setTelefone(contatoToEdit.telefone || '');
-      setDetalhes(contatoToEdit.detalhes || '');
-    } else {
-      setNome('');
-      setEmail('');
-      setTelefone('');
-      setDetalhes('');
+      setNome(contatoToEdit.nome);
+      setEmail(contatoToEdit.email);
+      setTelefone(contatoToEdit.telefone);
+      setDetalhes(contatoToEdit.detalhes);
     }
-  }, [contatoToEdit, open]);
+  }, [contatoToEdit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (contatoToEdit) {
-      handleUpdateContato(contatoToEdit.id, { id: contatoToEdit.id, nome, email, telefone, detalhes });
+      handleUpdateContato(contatoToEdit.id, { ...contatoToEdit, nome, email, telefone, detalhes });
     } else {
       addContato(nome, email, telefone, detalhes);
     }
+
+    setNome('');
+    setEmail('');
+    setTelefone('');
+    setDetalhes('');
   };
 
   return (
-    <FS.FormContainer open={open}>
-      <FS.CloseButton onClick={openCadastro}>X</FS.CloseButton>
-      <S.Title>{contatoToEdit ? 'Editar Contato' : 'Novo Contato'}</S.Title>
-      <FS.Formulario onSubmit={handleSubmit}>
-        <input
+    <FS.FormContainer open>
+      
+      <FS.Form onSubmit={handleSubmit}>
+        <FS.CloseButton onClick={openCadastro}>X</FS.CloseButton>
+        <FS.Input
           type="text"
-          placeholder="Nome..."
+          placeholder="Nome"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
           required
         />
-        <input
+        <FS.Input
           type="email"
-          placeholder="Email..."
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
-        <input
+        <FS.Input
           type="text"
-          placeholder="Telefone..."
+          placeholder="Telefone"
           value={telefone}
           onChange={(e) => setTelefone(e.target.value)}
+          required
         />
-        <input
-          type="text"
-          placeholder="Detalhes..."
+        <FS.TextArea
+          placeholder="Detalhes"
           value={detalhes}
           onChange={(e) => setDetalhes(e.target.value)}
         />
-        <button type="submit">Enviar</button>
-      </FS.Formulario>
+        <FS.Button type="submit">{contatoToEdit ? 'Atualizar' : 'Adicionar'} Contato</FS.Button>
+      </FS.Form>
     </FS.FormContainer>
   );
 };
