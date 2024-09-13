@@ -43,13 +43,14 @@ export const Calendario = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   .btnClose {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: transparent;
+    top: .2rem;
+    right: .2rem;
+    background-color: ${lightTheme.colors.deleteColor};
+    padding: .2rem;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: ${lightTheme.colors.deleteColor};
+    color: #fff;
     cursor: pointer;
     z-index: 101;
   }
@@ -59,6 +60,7 @@ export const Calendario = styled.div`
     font-size: 1.6rem; 
     padding: .5rem;
     border: none;
+    
   }
   .react-calendar__navigation button { // topo do calendario
     font-size: 1.2rem; 
@@ -91,7 +93,7 @@ export const Calendario = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: ${(props) => props.open ? 'block' : 'none'};
     max-width: 80%;
     height: auto;

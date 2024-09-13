@@ -7,8 +7,10 @@ const MenuSM = (props) => {
   return (
     <S.MenuStyle openingMenu={props.openMenu}>
         <S.HeaderMenu>
-            <Logo menuSM={true}/> 
-            <button onClick={props.onClick}>X</button>
+          <Link to='/' onClick={props.onClick}>
+            <Logo menuSM={true}/>
+          </Link>  
+          <button onClick={props.onClick}>X</button>
         </S.HeaderMenu>
         <S.Links>
             <Link to='/tarefas' onClick={props.onClick}>Tarefas</Link>

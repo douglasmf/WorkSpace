@@ -11,7 +11,7 @@ export const MenuStyle = styled.nav`
     transition: 0.8s;
   }
   a:hover {
-    color: ${lightTheme.colors.neutro400};
+    color: ${lightTheme.colors.saveColor};
   }
   @media (max-width: 768px){
     display: none;

@@ -12,6 +12,16 @@ export const ContatosContainer = styled.div`
   align-items: center;
   p {
     font-size: 2.5rem;
+    text-align: center;
+  }
+  @media (max-width: 1200px) {
+    box-shadow: none;
+  }
+  @media (max-width: 769px){
+    margin: 2rem auto;
+    p {
+      font-size: 1.8rem;
+    }
   }
   @media (max-width: 450px){
     margin: 2rem auto;
@@ -19,15 +29,16 @@ export const ContatosContainer = styled.div`
       font-size: 1.5rem;
     }
   }
-  @media (max-width: 1200px) {
-    box-shadow: none;
-  }
+  
 `;
 
 export const Title = styled.h1`
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
   color: ${lightTheme.colors.neutro900};
+  @media (max-width: 769px){
+    font-size: 1.5rem;
+  }
   @media (max-width: 450px){
     margin-bottom: 2.5rem;
   } 
