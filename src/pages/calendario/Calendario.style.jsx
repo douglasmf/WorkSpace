@@ -45,7 +45,7 @@ export const Calendario = styled.div`
     position: absolute;
     top: .2rem;
     right: .2rem;
-    background-color: ${lightTheme.colors.deleteColor};
+    background-color: ${lightTheme.colors.delete_close};
     padding: .2rem;
     border: none;
     font-size: 1rem;
@@ -62,17 +62,17 @@ export const Calendario = styled.div`
     border: none;
     
   }
-  .react-calendar__navigation button { // topo do calendario
+  .react-calendar__navigation button { 
     font-size: 1.2rem; 
     padding: 0.5rem; 
   }
 
   .react-calendar__month-view__days__day--weekend {
-    color: ${lightTheme.colors.deleteColor};
+    color: ${lightTheme.colors.delete_close};
   }
 
   .react-calendar__tile--active {
-    background-color: ${lightTheme.colors.saveColor} !important; 
+    background-color: ${lightTheme.colors.save_linkHover} !important; 
     color: white;
   }
 
@@ -109,7 +109,7 @@ export const Calendario = styled.div`
     }
 
     .react-calendar__tile {
-      padding: 10px 5px; /* Ajuste do padding para dias no calendário */
+      padding: 10px 5px; 
     }
   }
   @media (max-width: 499px){
@@ -199,15 +199,15 @@ export const Tarefas = styled.ul`
   /* Estilos para Chrome, Edge, e Safari */
   &::-webkit-scrollbar {
     width: 8px;
-    opacity: ${({ numTarefas }) => numTarefas > 9 ? '1' : '0'}; /* Ajusta a opacidade */
-    transition: opacity 0.3s ease; /* Transição suave ao aparecer */
+    opacity: ${({ numTarefas }) => numTarefas > 9 ? '1' : '0'}; 
+    transition: opacity 0.3s ease; 
   }
   
   &::-webkit-scrollbar-thumb {
     background-color: ${lightTheme.colors.neutro100}; 
     border-radius: 8px;
-    opacity: ${({ numTarefas }) => numTarefas > 9 ? '1' : '0'}; /* Ajusta a opacidade */
-    transition: opacity 0.3s ease; /* Transição suave ao aparecer */
+    opacity: ${({ numTarefas }) => numTarefas > 9 ? '1' : '0'}; 
+    transition: opacity 0.3s ease; 
   }
   
 `;
@@ -256,7 +256,7 @@ export const TarefaButtons = styled.div`
   }
 
   button.del {
-    background-color: ${lightTheme.colors.deleteColor}; 
+    background-color: ${lightTheme.colors.delete_close}; 
   }
 `;
 
@@ -273,7 +273,7 @@ export const TarefasSave = styled.div`
   button {
     padding: 0.5rem 1rem;
     border: none;
-    background-color: ${lightTheme.colors.saveColor};
+    background-color: ${lightTheme.colors.save_linkHover};
     font-weight: bold;
     color: #fff;
     cursor: pointer;
@@ -311,7 +311,7 @@ export const TarefasEdit = styled.div`
     position: absolute;
     top: 4%;
     right: 2%;
-    color: ${lightTheme.colors.deleteColor}; 
+    color: ${lightTheme.colors.delete_close}; 
     font-weight: bold;
     border: none;
     font-size: 1.4rem;
@@ -332,7 +332,7 @@ export const TarefasEdit = styled.div`
       padding: 0.5rem 1rem;
       margin-left: 1rem;
       border: none;
-      background-color: ${lightTheme.colors.saveColor}; 
+      background-color: ${lightTheme.colors.save_linkHover}; 
       color: white;
       cursor: pointer;
       opacity: .8;

@@ -66,11 +66,12 @@ export const Card = styled.div`
     border-radius: 20px;
     text-align: center;
     h1{
-        font-size: 1.8rem;
-        color: ${lightTheme.colors.neutro700};
-        margin-bottom: 1rem;
-        padding-bottom: .5rem;
-        border-bottom: 1px solid ${lightTheme.colors.neutro300};
+      width: 100%;
+      font-size: 1.8rem;
+      color: ${lightTheme.colors.neutro700};
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid ${lightTheme.colors.neutro300};
     }
     p {
         font-size: 1.3rem;
@@ -92,13 +93,13 @@ export const Card = styled.div`
         border-radius: 10px;
     }
     #btnTarefas {
-        background-color: ${lightTheme.colors.saveColor};
+        background-color: ${lightTheme.colors.save_linkHover};
     }
     #btnNovo {
         background-color: ${lightTheme.colors.completeColor};
     }
     #btnContatos {
-        background-color: ${lightTheme.colors.deleteColor};
+        background-color: ${lightTheme.colors.delete_close};
     }
     a:hover {
         opacity: 1;

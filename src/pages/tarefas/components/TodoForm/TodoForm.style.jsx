@@ -20,7 +20,7 @@ export const Formulario = styled.form`
   button {
     padding: .6rem 1rem;
     margin-left: .5rem;
-    background-color: ${lightTheme.colors.saveColor};
+    background-color: ${lightTheme.colors.save_linkHover};
     border: none;
     font-weight: bold;
     color: #fff;

@@ -95,7 +95,7 @@ export const Tabela = styled.table`
       color: ${lightTheme.colors.editColor};
     }
     .delete{
-      color: ${lightTheme.colors.deleteColor};
+      color: ${lightTheme.colors.delete_close};
     }
   }
 `;
@@ -104,7 +104,7 @@ export const ButtonAdd = styled.button`
   margin-top: 2rem;
   padding: .4rem .8rem;
   border-radius: 6px;
-  background-color: ${lightTheme.colors.saveColor};
+  background-color: ${lightTheme.colors.save_linkHover};
   color: #fff;
   font-size: 1em;
   font-weight: bold;

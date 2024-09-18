@@ -66,6 +66,6 @@ export const Buttons = styled.div`
     }
     .delete {
         padding: .4rem .6rem;
-        background-color: ${lightTheme.colors.deleteColor};
+        background-color: ${lightTheme.colors.delete_close};
     }
 `;

@@ -83,7 +83,7 @@ export const TarefasEdit = styled.div`
     position: absolute;
     top: 4%;
     right: 2%;
-    color: ${lightTheme.colors.deleteColor}; 
+    color: ${lightTheme.colors.delete_close}; 
     background-color: transparent;
     font-weight: bold;
     border: none;
@@ -99,13 +99,13 @@ export const TarefasEdit = styled.div`
       outline: none;
     }
     input:focus{
-      outline: 1px solid ${lightTheme.colors.saveColor};
+      outline: 1px solid ${lightTheme.colors.save_linkHover};
     }
     button{
       padding: 0.5rem 1rem;
       margin-left: 1rem;
       border: none;
-      background-color: ${lightTheme.colors.saveColor}; 
+      background-color: ${lightTheme.colors.save_linkHover}; 
       color: white;
       cursor: pointer;
       opacity: .8;
