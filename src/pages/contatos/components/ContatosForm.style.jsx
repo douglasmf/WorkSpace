@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { lightTheme } from '../../../themes/Themes';
 
 export const FormContainer = styled.div`
@@ -8,14 +8,12 @@ export const FormContainer = styled.div`
   top: 0;
   left: 0;
   padding: 1.2rem 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.612);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 `;
-
-
 
 export const Form = styled.form`
   position: relative;
@@ -24,8 +22,17 @@ export const Form = styled.form`
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 450px;
+  width: 36%;
+  @media (max-width: 1200px){
+    width: 50%;
+  }
+  @media (max-width: 769px){
+    width: 60%;
+  }
+  @media (max-width: 599px){
+    width: 80%;
+  }
+
 `;
 
 export const CloseButton = styled.button`
@@ -40,30 +47,41 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-export const Input = styled.input`
+const InputDefault = css`
   padding: 0.8rem;
   margin-bottom: 1rem;
   border: 1px solid ${lightTheme.colors.neutro300};
   border-radius: 4px;
   font-size: 1rem;
+  &:focus{
+    outline-color: ${lightTheme.colors.neutro400};
+  }
+  @media (max-width: 769px) {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+`;
+
+export const Input = styled.input`
+  ${InputDefault}
 `;
 
 export const TextArea = styled.textarea`
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid ${lightTheme.colors.neutro300};
-  border-radius: 4px;
-  font-size: 1rem;
+  ${InputDefault}
+  height: 100px;
+  overflow-y: scroll;
+  @media (max-width: 769px){
+    height: 80px;
+  }
 `;
 
 export const Button = styled.button`
-  background-color: ${lightTheme.colors.saveColor};
+  ${InputDefault}
+  background-color: ${lightTheme.colors.save_linkHover};
   color: #fff;
-  padding: 0.8rem;
   border: none;
-  border-radius: 4px;
+  margin-bottom: 0;
   cursor: pointer;
-  font-size: 1rem;
   opacity: .8;
   transition: .5s;
   &:hover {

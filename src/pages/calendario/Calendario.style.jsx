@@ -295,7 +295,7 @@ export const TarefasEdit = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 20%;
+  width: 80%;
   height: 20%;
   padding: 2rem 1.5rem;
   transform: translate(-50%, -50%);
@@ -349,6 +349,7 @@ export const TarefasEdit = styled.div`
 
   @media (max-width: 769px) {
     width: 60%;
+    height: 60%;
   }
   @media (max-width: 599px) {
     width: 70%;
